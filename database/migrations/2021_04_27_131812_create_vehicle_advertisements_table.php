@@ -14,22 +14,24 @@ class CreateVehicleAdvertisementsTable extends Migration
     public function up()
     {
         Schema::create('vehicle_advertisements', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id',true);
 
-            $table->text('title');
-            $table->text('model');
-            $table->text('brand');
-            $table->text('description');
-            $table->text('cost');
-            $table->text('year');
-            $table->text('transmission');
-            $table->text('fuel');
-            $table->text('body');
-            $table->text('engine_capacity');
-
-
+            $table->string('title',200);
+            $table->string('model',100);
+            $table->string('brand',100);
+            $table->string('description',2000);
+            $table->string('cost',100);
+            $table->string('year',100);
+            $table->string('transmission',100);
+            $table->string('fuel',100);
+            $table->string('body',100);
+            $table->string('engine_capacity',100);
+            $table->integer('driverId');
+            $table->string('driverName',100);
 
             $table->timestamps();
+
+            $table->foreign('driverId')->references('id')->on('drivers');
         });
     }
 

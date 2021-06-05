@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateDriversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->integer('id',true);
             $table->string('name',100);
-            $table->string('email',200);
-            $table->string('password',100);
+            $table->string('licenseNo',100);
             $table->string('phone',100);
-            $table->string('level',100);
-            $table->rememberToken();
+            $table->string('dob',100);
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
@@ -32,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('drivers');
     }
 }
