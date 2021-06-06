@@ -34,9 +34,9 @@ class AuthController extends Controller
         if(!auth()->attempt($request->only('email','password'), $request->remember)){
             return back()->with('status','The login details are incorrect');
         }else{
-            if(auth->user()->level=='Admin'){
+            if(auth()->user()->level=='Admin'){
 
-            }else if(auth->user()->level=='Officer'){
+            }else if(auth()->user()->level=='Officer'){
 
             }
             else{

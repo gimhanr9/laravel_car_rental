@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'loginValidate'])->name('login.post');
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
