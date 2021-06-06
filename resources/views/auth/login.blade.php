@@ -37,11 +37,13 @@
                               <span class="text-danger">{{ $errors->first('password') }}</span>
                           @endif
                                 </div>
-                                <div class="form-group-row">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="remember>
-                                        <label class="custom-control-label" for="customCheck">Remember
-                                            Me</label>
+                                <div class="form-group row">
+                                    <div class="col-md-6 offset-md-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="remember"> Remember Me
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">
@@ -55,7 +57,7 @@
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="register.html">Create an Account!</a>
+                                <a class="small" href="{{ route('register') }}">Create an Account!</a>
                             </div>
                         </div>
                     </div>
