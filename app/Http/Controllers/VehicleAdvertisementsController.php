@@ -15,7 +15,7 @@ class VehicleAdvertisementsController extends Controller
     public function index()
     {
         $advertisements=VehicleAdvertisement::get();
-        return view('listing',['vehicleAdvertisement'=>$advertisements]);
+        return view('officer.vehicleListing',['vehicleAdvertisement'=>$advertisements]);
     }
 
     /**

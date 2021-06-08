@@ -26,7 +26,7 @@ class VehicleAdvertisement extends Model
         'body',
         'engine_capacity',
         'main_image',
-        'driverId',
+        'rented',
     ];
 
     public function driver(){

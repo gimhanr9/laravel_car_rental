@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentalsController;
+use App\Http\Controllers\DriversController;
 use App\Http\Controllers\VehicleAdvertisementsController;
 use App\Models\User;
 /*
@@ -33,5 +34,15 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home');
 Route::get('vehicles/create', [VehicleAdvertisementsController::class, 'create'])->name('vehicles.create');
+Route::get('vehicles/all', [VehicleAdvertisementsController::class, 'index'])->name('vehicles.all');
+Route::get('vehicles/edit', [VehicleAdvertisementsController::class, 'edit'])->name('vehicles.edit');
+Route::get('vehicles/edit', [VehicleAdvertisementsController::class, 'update'])->name('vehicles.update');
+
+
+Route::get('drivers/create', [DriversController::class, 'create'])->name('drivers.create');
+Route::get('drivers/post', [DriversController::class, 'store'])->name('drivers.post');
+Route::get('drivers/all', [DriversController::class, 'index'])->name('drivers.all');
+Route::get('drivers/edit', [DriversController::class, 'edit'])->name('drivers.edit');
+Route::get('drivers/update', [DriversController::class, 'update'])->name('drivers.update');
 
 

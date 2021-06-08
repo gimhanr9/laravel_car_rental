@@ -12,7 +12,7 @@ class FileUpload extends Component
 
     use WithFileUploads;
     public $title,$main_image,$model,$brand,$cost,$year,$transmission,$fuel,$body,$engine_capacity,
-    $description,$driverId;
+    $description,$rented;
 
     
 
@@ -30,12 +30,13 @@ class FileUpload extends Component
             'body' => 'required',
             'engine_capacity' => 'required',
             'description' => 'required',
-            'driverId' => 'required',
+            'rented' => 'nullable'
          
         ]);
   
-        $imageName= $this->file->store('uploads', 'public');
+        $imageName= $this->main_image->store('carImages', 'public');
         $validatedData['main_image'] = $imageName;
+        $validatedData['rented'] = 'No';
   
         VehicleAdvertisement::create($validatedData);
   

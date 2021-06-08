@@ -27,11 +27,11 @@ class CreateVehicleAdvertisementsTable extends Migration
             $table->string('body',100);
             $table->string('engine_capacity',100);
             $table->string('main_image',1000);
-            $table->integer('driverId');
+            $table->string('rented');
 
             $table->timestamps();
 
-            $table->foreign('driverId')->references('id')->on('drivers');
+        
         });
     }
 

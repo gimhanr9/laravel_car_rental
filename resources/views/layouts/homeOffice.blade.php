@@ -32,23 +32,31 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+                <a class="nav-link" href="{{ route('officer.home') }}">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
+              <li class="dropdown">
+                <a id="sub_menu1" class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cars</a>
               
-              <li class="nav-item">
-                <a class="nav-link" href="">Cars</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('vehicles.create') }}">Add</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cars.html">Requests</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">About</a>
-              </li>
+                <div id="myDropdown1" class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('vehicles.create') }}">Add Car</a>
+
+                    <a class="dropdown-item" href="{{ route('vehicles.all') }}">View Cars</a>
+                  
+                </div>
+            </li>
+
+              <li class="dropdown">
+                <a id="sub_menu2" class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Drivers</a>
+              
+                <div id="myDropdown2" class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('drivers.create') }}">Add Driver</a>
+  
+                    <a class="dropdown-item" href="{{ route('drivers.all') }}">View Drivers</a>
+                  
+                </div>
+            </li>
               
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}">Logout</a>
@@ -136,7 +144,8 @@
     </div>
 
  
-
+    <script src="/js/home.js"></script>
   </body>
   @livewireScripts
+
 </html>

@@ -1,7 +1,7 @@
 @extends('layouts.homeOffice')
 
 @section('title')
-    My Requests-ZineX
+    Add Vehicle-ZineX
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12">
           <h1>Add Vehicle</h1>
-          <span>Add your vehicle here to display to customers.</span>
+         
         </div>
       </div>
     </div>
@@ -55,4 +55,6 @@
   </tbody>
 </table>
 </div>
+@livewireScripts
+
 @endsection

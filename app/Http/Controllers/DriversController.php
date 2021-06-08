@@ -15,7 +15,7 @@ class DriversController extends Controller
     public function index()
     {
         $drivers=Drivers::all(['id','name']);
-        return view('customer.myRentals',['drivers'=>$drivers]);
+        return view('officer.listDrivers',['drivers'=>$drivers]);
     }
 
     /**
@@ -25,7 +25,7 @@ class DriversController extends Controller
      */
     public function create()
     {
-        //
+        return view('officer.addDriver');
     }
 
     /**
@@ -36,7 +36,21 @@ class DriversController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'licenseNo' => 'required',
+            'phone' => 'required',
+            'dob' => 'required',
+    
+        ]);
+
+        Drivers::create([
+            'name' => $request->name,
+            'licenseNo' => $request->licenseNo,
+            'phone' => $request->phone,
+            'dob' => $request->dob,
+        ]);
+        
     }
 
     /**
@@ -56,9 +70,10 @@ class DriversController extends Controller
      * @param  \App\Models\Drivers  $drivers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drivers $drivers)
+    public function edit($id)
     {
-        //
+        $driver = Drivers::find($id);
+        return view('officer.driverEdit',['driver'=>$driver]);
     }
 
     /**
@@ -68,9 +83,25 @@ class DriversController extends Controller
      * @param  \App\Models\Drivers  $drivers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Drivers $drivers)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'licenseNo' => 'required',
+            'phone' => 'required',
+            'dob' => 'required',
+    
+        ]);
+        $driver=Driver::find($id);
+        $driver->name=$request->input('name');
+        $driver->licenseNo=$request->input('licenseNo');
+        $driver->phone=$request->input('phone');
+        $driver->dob=$request->input('dob');
+
+        $driver->save();
+        return redirect('officer.listDrivers')->with('success','Successfully Updated');
+
+
     }
 
     /**

@@ -6,11 +6,11 @@
 
 @section('content')
 
-<div>
+<div class="container">
     <form action="{{ route('register.post') }}" method="POST" >
  
 
-        <div class="form-row">
+        
 
             <div class="form-group">
                 <label for="inputAddress">Name</label>
@@ -27,8 +27,9 @@
                               <span class="text-danger">{{ $errors->first('license') }}</span>
                           @endif
             </div>
+            <div class="form-row">
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
               <label for="inputEmail4">Phone</label>
               <input type="text" class="form-control" id="inputEmail4" placeholder="Phone" name="phone">
               @if ($errors->has('phone'))

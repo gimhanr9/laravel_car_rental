@@ -5,12 +5,21 @@
 @endsection
 
 @section('content')
-
-<div>
-    <form wire:submit.prevent="submit" >
- 
-
-      <div class="form-row">
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Add Driver</h1>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <form action="{{ route('drivers.post') }}" method="POST" >
+    @csrf
 
         <div class="form-group">
             <label for="inputAddress">Name</label>
@@ -27,8 +36,9 @@
                           <span class="text-danger">{{ $errors->first('license') }}</span>
                       @endif
         </div>
+        <div class="form-row">
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <label for="inputEmail4">Phone</label>
           <input type="text" class="form-control" id="inputEmail4" placeholder="Phone" name="phone">
           @if ($errors->has('phone'))

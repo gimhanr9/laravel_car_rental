@@ -111,14 +111,7 @@
                     @error('description') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
 
-                <div class="form-group">
-                  <label for="inputState">Drivers</label>
-                  <select id="inputState" class="form-control" wire:model="driverId">
-                    <option selected>Select</option>
-                    <option>...</option>
-                  </select>
-                  @error('body') <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
+                
         
                 <div class="form-group">
                     <label for="exampleInputName">File:</label>
