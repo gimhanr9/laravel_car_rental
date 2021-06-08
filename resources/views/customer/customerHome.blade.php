@@ -19,32 +19,7 @@
         </div>
       </div>
       <!-- // Item -->
-      <!-- Item -->
-      <div class="item item-2">
-        <div class="img-fill">
-            <div class="text-content">
-              <h6>magni deserunt dolorem harum quas!</h6>
-              <h4>Aliquam iusto harum <br>  ratione porro odio</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa cupiditate mollitia adipisci assumenda laborum eius quae quo excepturi, eveniet. Dicta nulla ea beatae consequuntur?</p>
-              <a href="about.html" class="filled-button">About Us</a>
-            </div>
-        </div>
-      </div>
-      <!-- // Item -->
-      <!-- Item -->
-      <div class="item item-3">
-        <div class="img-fill">
-            <div class="text-content">
-              <h6>alias officia qui quae vitae natus!</h6>
-              <h4>Lorem ipsum dolor <br>sit amet, consectetur.</h4>
-              <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate mi. Sed nec cursus augue. Phasellus lacinia ac sapien vitae dapibus. Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</p>
-              <a href="contact.html" class="filled-button">Contact Us</a>
-            </div>
-        </div>
-      </div>
-      <!-- // Item -->
-      <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
     </div>
 </div>
 

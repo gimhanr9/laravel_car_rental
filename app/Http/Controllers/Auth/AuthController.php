@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
+
+
 class AuthController extends Controller
 {
 
+
+    protected $redirectTo = '/home';
     public function _construct(){
         $this->middleware(['guest']);
     }
@@ -35,12 +39,14 @@ class AuthController extends Controller
             return back()->with('status','The login details are incorrect');
         }else{
             if(auth()->user()->level=='Admin'){
+                return redirect()->route('admin/home');
 
             }else if(auth()->user()->level=='Officer'){
+                return redirect()->route('officer/home');
 
             }
             else{
-                return redirect()->route('dashboard');
+                return redirect()->route('home');
             
             }
            
@@ -71,5 +77,12 @@ class AuthController extends Controller
         ]);
            
         return redirect()->route('dashboard');
+    }
+
+    public function logout() {
+        
+        auth()->logout();
+  
+        return redirect()->route('login');
     }
 }

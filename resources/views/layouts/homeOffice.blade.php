@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>@yield('title')</title>
-    
+    @livewireStyles
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link  href="{{ asset('/css/home.css') }}" rel="stylesheet">
@@ -41,7 +41,7 @@
                 <a class="nav-link" href="">Cars</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Rentals</a>
+                <a class="nav-link" href="{{ route('vehicles.create') }}">Add</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="cars.html">Requests</a>
@@ -138,4 +138,5 @@
  
 
   </body>
+  @livewireScripts
 </html>

@@ -26,8 +26,8 @@ class CreateVehicleAdvertisementsTable extends Migration
             $table->string('fuel',100);
             $table->string('body',100);
             $table->string('engine_capacity',100);
+            $table->string('main_image',1000);
             $table->integer('driverId');
-            $table->string('driverName',100);
 
             $table->timestamps();
 

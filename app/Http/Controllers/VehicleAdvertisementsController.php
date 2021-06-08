@@ -15,7 +15,7 @@ class VehicleAdvertisementsController extends Controller
     public function index()
     {
         $advertisements=VehicleAdvertisement::get();
-        return $advertisements;
+        return view('listing',['vehicleAdvertisement'=>$advertisements]);
     }
 
     /**
@@ -25,7 +25,8 @@ class VehicleAdvertisementsController extends Controller
      */
     public function create()
     {
-        //
+        return view('officer.addVehicle');
+        
     }
 
     /**
@@ -36,7 +37,38 @@ class VehicleAdvertisementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'model' => 'required',
+            'brand' => 'required',
+            'description' => 'required|min:10',
+            'cost' => 'required',
+            'year' => 'required',
+            'transmission' => 'required',
+            'fuel' => 'required',
+            'body' => 'required',
+            'engine_capacity' => 'required',
+            'driverId' => 'required',
+            'driverName' => 'required',
+    
+        ]);
+
+        $vehicle=VehicleAdvertisement::create([
+            'title' => $request->title,
+            'model' => $request->model,
+            'brand' => $request->brand,
+            'description' => $request->description,
+            'cost' => $request->cost,
+            'year' => $request->year,
+            'transmission' => $request->transmission,
+            'fuel' => $request->fuel,
+            'body' => $request->body,
+            'engine_capacity' => $request->engine_capacity,
+            'driverId' => $request->driverId,
+            'driverName' => $request->driverName,
+        ]);
+
+        return back();
     }
 
     /**
@@ -47,7 +79,7 @@ class VehicleAdvertisementsController extends Controller
      */
     public function show(VehicleAdvertisement $vehicleAdvertisement)
     {
-        //
+        return view('vehicles.vehicleDetails', ['vehicleDetails'=> $vehicleAdvertisement]);
     }
 
     /**

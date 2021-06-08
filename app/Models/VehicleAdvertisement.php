@@ -25,8 +25,8 @@ class VehicleAdvertisement extends Model
         'fuel',
         'body',
         'engine_capacity',
+        'main_image',
         'driverId',
-        'driverName'
     ];
 
     public function driver(){

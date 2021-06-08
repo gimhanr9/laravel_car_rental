@@ -15,7 +15,7 @@ class RequestsController extends Controller
     public function index()
     {
         $requests=Request::get();
-        return $requests;
+        return view('admin.requests',['request'=>$requests]);
     }
 
     /**

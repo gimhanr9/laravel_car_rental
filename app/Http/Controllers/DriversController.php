@@ -14,8 +14,8 @@ class DriversController extends Controller
      */
     public function index()
     {
-        $drivers=Drivers::get();
-        return $drivers;
+        $drivers=Drivers::all(['id','name']);
+        return view('customer.myRentals',['drivers'=>$drivers]);
     }
 
     /**

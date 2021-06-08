@@ -15,7 +15,7 @@ class RentalsController extends Controller
     public function index()
     {
         $rentals=Rental::get();
-        return $rentals;
+        return view('customer.myRentals',['rentals'=>$rentals]);
     }
 
     /**

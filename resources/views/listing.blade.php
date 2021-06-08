@@ -19,180 +19,16 @@ Cars-ZineX
   <div class="services">
     <div class="container">
       <form action="#" id="contact">
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Used/New:</label>
-         
-                     <select class="form-control">
-                          <option value="">All</option>
-                          <option value="new">New vehicle</option>
-                          <option value="used">Used vehicle</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Vehicle Type:</label>
-         
-                     <select class="form-control">
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Make:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Model:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Price:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Mileage:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Engine size:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Power:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Fuel:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Gearbox:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Doors:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-    
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="form-group">
-                    <label>Number of seats:</label>
-         
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-                </div>
-            </div>
-        </div>
         
-        <div class="col-sm-4 offset-sm-4">
-          <div class="main-button text-center">
-              <a href="#" class="filled-button">Search</a>
-          </div>
-        </div>
-        <br>
-        <br>
       </form>
 
       <div class="row">
+          @foreach ($vehicleAdvertisement as $item)
+              
+          @endforeach
         <div class="col-md-4">
           <div class="service-item">
-            <img src="assets/images/product-1-720x480.jpg" alt="">
+            <img src="uploads/images/product-1-720x480.jpg" alt="">
             <div class="down-content">
               <h4>Lorem ipsum dolor sit amet</h4>
               <div style="margin-bottom:10px;">
@@ -202,7 +38,7 @@ Cars-ZineX
               </div>
 
               <p>
-                <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-dashboard"></i> $item->distance km &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-cube"></i> 1800 cc &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-cog"></i> Manual &nbsp;&nbsp;&nbsp;
               </p>
