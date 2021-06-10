@@ -39,7 +39,7 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="">Cars</a>
+                <a class="nav-link" href="{{ route('vehicles.all') }}">Cars</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="">Rentals</a>

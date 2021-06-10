@@ -23,9 +23,9 @@ class RequestsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($vehicleId)
     {
-        //
+        return view('customer.requestForm');   
     }
 
     /**
@@ -36,7 +36,23 @@ class RequestsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'start' => 'required',
+            'destination' => 'required',
+            'dateTaken' => 'required',
+            'dueDate' => 'required',
+            'distance' => 'required',
+    
+        ]);
+
+        Request::create([
+            'start' => $request->start,
+            'destination' => $request->destination,
+            'dateTaken' => $request->dateTaken,
+            'dueDate' => $request->dueDate,
+            'distance' => $request->distance,
+        ]);
+        
     }
 
     /**

@@ -547,6 +547,50 @@ header .navbar {
     letter-spacing: 0.5px;
 }
 
+.services {
+    margin-top: 140px;
+}
+
+.service-item img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-item .down-content {
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+
+.service-item .down-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    margin-bottom: 15px;
+}
+
+.service-item .down-content p {
+    margin-bottom: 20px;
+}
+
+.page-link:hover,
+.page-link {
+    color: #a4c639;
+}
+
+.btn-primary {
+    border-color: #a4c639;
+    background-color: #a4c639;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus {
+    opacity: 0.6;
+    border-color: #a4c639;
+    background-color: #a4c639;
+}
+
 
 /* Footer Style */
 

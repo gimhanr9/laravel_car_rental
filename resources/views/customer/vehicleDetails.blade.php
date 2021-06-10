@@ -10,7 +10,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1><sup>Rs </sup>11779</h1>
+          <h1><sup>Rs </sup>{{$vehicle->cost}}<sub>/Km</sub></h1>
          
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-md-7">
           <div>
-            <img src="assets/images/product-1-720x480.jpg" alt="" class="img-fluid wc-image">
+            <img src="{{ URL::to('/') }}/storage/{{ $vehicle->main_image }}" alt="" class="img-fluid wc-image">
           </div>
 
           <br>
@@ -35,19 +35,13 @@
         <div class="col-md-5">
           <form action="#" method="post" class="form">
             <ul class="list-group list-group-flush">
-             <li class="list-group-item">
-                  <div class="clearfix">
-                       <span class="pull-left">Condition</span>
-
-                       <strong class="pull-right">Used vehicle</strong>
-                  </div>
-             </li>
+             
 
              <li class="list-group-item">
                   <div class="clearfix">
                        <span class="pull-left">Brand</span>
 
-                       <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                       <strong class="pull-right">{{$vehicle->brand}}</strong>
                   </div>
              </li>
 
@@ -55,7 +49,7 @@
                   <div class="clearfix">
                        <span class="pull-left"> Model</span>
 
-                       <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                       <strong class="pull-right">{{$vehicle->model}}</strong>
                   </div>
              </li>
 
@@ -63,15 +57,7 @@
                   <div class="clearfix">
                        <span class="pull-left">Year</span>
 
-                       <strong class="pull-right">05/2010</strong>
-                  </div>
-             </li>
-
-             <li class="list-group-item">
-                  <div class="clearfix">
-                       <span class="pull-left">Mileage</span>
-
-                       <strong class="pull-right">5000 km</strong>
+                       <strong class="pull-right">{{$vehicle->year}}</strong>
                   </div>
              </li>
 
@@ -79,7 +65,7 @@
                   <div class="clearfix">
                        <span class="pull-left">Fuel</span>
 
-                       <strong class="pull-right">Diesel</strong>
+                       <strong class="pull-right">{{$vehicle->fuel}}</strong>
                   </div>
              </li>
 
@@ -87,7 +73,7 @@
                   <div class="clearfix">
                        <span class="pull-left">Engine Capacity</span>
 
-                       <strong class="pull-right">1800 cc</strong>
+                       <strong class="pull-right">{{$vehicle->engine_capacity}}</strong>
                   </div>
              </li>
 
@@ -95,7 +81,7 @@
                   <div class="clearfix">
                        <span class="pull-left">Body</span>
 
-                       <strong class="pull-right">85 hp</strong>
+                       <strong class="pull-right">{{$vehicle->body}}</strong>
                   </div>
              </li>
 
@@ -104,7 +90,7 @@
                   <div class="clearfix">
                        <span class="pull-left">Transmission</span>
 
-                       <strong class="pull-right">Manual</strong>
+                       <strong class="pull-right">{{$vehicle->transmission}}</strong>
                   </div>
              </li>
 
@@ -131,7 +117,7 @@
           <div class="tabs-content">
             <h4>Vehicle Description</h4>
 
-            <p>- Colour coded bumpers<br>- Tinted glass<br>- Immobiliser<br>- Central locking - remote<br>- Passenger airbag<br>- Electric windows<br>- Rear head rests<br>- Radio<br>- CD player<br>- Ideal first car<br>- Warranty<br>- High level brake light<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>{{$vehicle->description}}</p>
 
             <br>
           </div>

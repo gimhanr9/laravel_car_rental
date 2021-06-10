@@ -19,11 +19,12 @@ Request-ZineX
   <br>
   <br>
   <div class="container">
-    <form action="{{ route('drivers.post') }}" method="POST" >
+    <form action="{{ route('request.post') }}" method="POST" >
       @csrf
+
   
-      <div class="form-row col-md-6">
-          <div class="form-group">
+      <div class="form-row">
+          <div class="form-group col-md-6">
               <label for="inputAddress">Start</label>
               <input type="text" class="form-control" id="inputTitle" placeholder="Start"
               name="start">
@@ -39,23 +40,33 @@ Request-ZineX
                         @endif
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputAddress">Rent Date</label>
+              <input type="date" class="form-control" id="inputTitle" placeholder="Rent Date"
+              name="dateTaken">
+              @if ($errors->has('dateTaken'))
+                            <span class="text-danger">{{ $errors->first('dateTaken') }}</span>
+                        @endif
+            </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Due Date</label>
+            <input type="date" class="form-control" id="inputEmail4" placeholder="Return" name="dueDate">
+            @if ($errors->has('dueDate'))
+                            <span class="text-danger">{{ $errors->first('dueDate') }}</span>
+                        @endif
+          </div>
+        </div>
           <div class="form-row">
   
           <div class="form-group col-md-6">
-            <label for="inputEmail4">Phone</label>
-            <input type="text" class="form-control" id="inputEmail4" placeholder="Phone" name="phone">
-            @if ($errors->has('phone'))
-                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+            <label for="inputEmail4">Distance</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Distance" name="distance">
+            @if ($errors->has('distance'))
+                            <span class="text-danger">{{ $errors->first('distance') }}</span>
                         @endif
           </div>
           
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">DOB</label>
-              <input type="date" class="form-control" id="inputEmail4" placeholder="Model"name="dob">
-              @if ($errors->has('dob'))
-                            <span class="text-danger">{{ $errors->first('dob') }}</span>
-                        @endif
-            </div>
   
           </div>
       <button type="submit" class="btn btn-success">Add</button>

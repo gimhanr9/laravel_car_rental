@@ -15,8 +15,7 @@ Cars-ZineX
     </div>
   </div>
 </div>
-<br>
-<br>
+
 <div>
 @livewire('vehicle-listing')
 <br>

@@ -19,6 +19,8 @@ class Request extends Model
         'vehicleId',
         'customerName',
         'vehicleBrand',
+        'start',
+        'destination',
         'distance',
         'price',
         'dateTaken',

@@ -15,7 +15,7 @@ class VehicleAdvertisementsController extends Controller
     public function index()
     {
         $advertisements=VehicleAdvertisement::get();
-        return view('officer.vehicleListing',['vehicleAdvertisement'=>$advertisements]);
+        return view('listing',['vehicleAdvertisement'=>$advertisements]);
     }
 
     public function adminList()
@@ -81,9 +81,11 @@ class VehicleAdvertisementsController extends Controller
      * @param  \App\Models\VehicleAdvertisement  $vehicleAdvertisement
      * @return \Illuminate\Http\Response
      */
-    public function show(VehicleAdvertisement $vehicleAdvertisement)
+    public function show($id)
     {
-        return view('vehicles.vehicleDetails', ['vehicleDetails'=> $vehicleAdvertisement]);
+       
+        $vehicleAdvertisement=VehicleAdvertisement::findOrFail($id);
+        return view('customer.vehicleDetails', ['vehicle'=> $vehicleAdvertisement]);
     }
 
     /**

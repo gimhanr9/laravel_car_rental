@@ -33,8 +33,13 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 //Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home')->middleware('userLevel');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home');
+
 Route::get('vehicles/create', [VehicleAdvertisementsController::class, 'create'])->name('vehicles.create');
 Route::get('vehicles/all', [VehicleAdvertisementsController::class, 'index'])->name('vehicles.all');
+Route::get('details/{id}', [VehicleAdvertisementsController::class, 'show']);
+
+
+Route::get('request/post', [RequestsController::class, 'store'])->name('request.post');
 
 
 

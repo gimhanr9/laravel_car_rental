@@ -67,6 +67,7 @@ class FileUpload extends Component
         $this->vehicleId = $id;
         $this->title = $vehicle->title;
         $this->main_image = $vehicle->main_image;
+        $this->model = $vehicle->model;
         $this->brand = $vehicle->brand;
         $this->cost = $vehicle->cost;
         $this->year = $vehicle->year;
