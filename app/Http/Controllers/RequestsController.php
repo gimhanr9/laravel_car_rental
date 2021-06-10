@@ -14,7 +14,7 @@ class RequestsController extends Controller
      */
     public function index()
     {
-        $requests=Request::get();
+        $requests=Request::where('approved','=','No')->get();
         return view('admin.requests',['request'=>$requests]);
     }
 

@@ -15,7 +15,13 @@ class UsersController extends Controller
     public function index()
     {
         $users=User::get();
-        return $users;
+        return view('admin.dashboard',['user'=>$users]);
+    }
+
+    public function getOfficer()
+    {
+        $officer=User::where('level','=','Officer')->get();
+        return view('admin.officers',['officer'=>$officer]);
     }
 
     /**

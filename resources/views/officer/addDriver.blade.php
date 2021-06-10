@@ -54,10 +54,10 @@
                       @endif
           </div>
 
-          
+        </div>
     <button type="submit" class="btn btn-success">Add</button>
+        
     </form>
 </div>
-
 
 @endsection

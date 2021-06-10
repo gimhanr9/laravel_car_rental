@@ -18,6 +18,12 @@ class VehicleAdvertisementsController extends Controller
         return view('officer.vehicleListing',['vehicleAdvertisement'=>$advertisements]);
     }
 
+    public function adminList()
+    {
+        $advertisements=VehicleAdvertisement::get();
+        return view('admin.vehicles',['vehicleAdvertisement'=>$advertisements]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,9 +54,7 @@ class VehicleAdvertisementsController extends Controller
             'fuel' => 'required',
             'body' => 'required',
             'engine_capacity' => 'required',
-            'driverId' => 'required',
-            'driverName' => 'required',
-    
+            'rented'=>'nullable'
         ]);
 
         $vehicle=VehicleAdvertisement::create([
@@ -64,8 +68,8 @@ class VehicleAdvertisementsController extends Controller
             'fuel' => $request->fuel,
             'body' => $request->body,
             'engine_capacity' => $request->engine_capacity,
-            'driverId' => $request->driverId,
-            'driverName' => $request->driverName,
+            'rented'=>'No'
+            
         ]);
 
         return back();

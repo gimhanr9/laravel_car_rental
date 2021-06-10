@@ -1,7 +1,7 @@
 @extends('layouts.admindash');
 
 @section('title')
-Admin-ZineX
+Officers-ZineX
 
 @endsection
 
@@ -9,11 +9,12 @@ Admin-ZineX
 <div class="container-fluid">
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Requests</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Officers</h1>
 
                     </div>
 
-                    
+                        
+
                     <!-- Content Row -->
 					<div class="container-fluid">
 
@@ -22,25 +23,20 @@ Admin-ZineX
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Requests</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Officers</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>CustomerID</th>
-                                            <th>VehicleID</th>
-                                            <th>Customer Name</th>
-                                            <th>Brand</th>
-                                            <th>Distance</th>
-                                            <th>Price</th>
-                                            <th>Date Taken</th>
-                                            <th>Due Date</th>
-                                            <th>Actions</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Level</th>
                                         </tr>
                                     </thead>
-
                                     @foreach ($request as $item)
                                     <tr>
                                         <td>{{ $item->customerId }}</td>
@@ -63,8 +59,5 @@ Admin-ZineX
                     </div>
 
 </div>
-
-
-
 
 @endsection

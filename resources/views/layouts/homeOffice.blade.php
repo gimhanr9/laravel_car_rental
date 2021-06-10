@@ -36,16 +36,9 @@
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="dropdown">
-                <a id="sub_menu1" class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cars</a>
-              
-                <div id="myDropdown1" class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('vehicles.create') }}">Add Car</a>
-
-                    <a class="dropdown-item" href="{{ route('vehicles.all') }}">View Cars</a>
-                  
-                </div>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('vehicles.create') }}">Vehicles</a>
+              </li>
 
               <li class="dropdown">
                 <a id="sub_menu2" class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Drivers</a>
