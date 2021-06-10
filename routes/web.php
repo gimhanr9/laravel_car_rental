@@ -34,17 +34,22 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 Route::get('officer/all', [HomeController::class, 'officerAll'])->name('officer.all');
-Route::get('officer/edit', [HomeController::class, 'editOfficer'])->name('officer.edit');
+Route::get('edit-officer/{id}', [HomeController::class, 'editOfficer']);
+Route::get('delete-officer/{id}', [HomeController::class, 'deleteOfficer']);
 //Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home')->middleware('userLevel');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home');
 
 Route::get('vehicles/create', [VehicleAdvertisementsController::class, 'create'])->name('vehicles.create');
 Route::get('vehicles/all', [VehicleAdvertisementsController::class, 'index'])->name('vehicles.all');
+Route::get('admin/vehicles', [VehicleAdvertisementsController::class, 'adminList'])->name('admin.allvehicles');
 Route::get('details/{id}', [VehicleAdvertisementsController::class, 'show']);
 
 
-Route::post('add/officer', [RentalsController::class, 'storeRequest'])->name('request.post');
+Route::post('update-officer/{id}', [HomeController::class, 'updateOfficer'])->name('officer.update');
+
+Route::post('request/post', [RentalsController::class, 'store'])->name('request.post');
+Route::get('requests/all', [RentalsController::class, 'allRentals'])->name('requests.all');
 
 
 Route::get('drivers/all', [DriversController::class, 'index'])->name('drivers.all');

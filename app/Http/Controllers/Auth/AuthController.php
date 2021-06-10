@@ -102,7 +102,7 @@ class AuthController extends Controller
             'level' => 'Officer',
         ]);
            
-        return redirect()->route('dashboard');
+        return back()->with('status','Successfully Created the Officer.');
     }
 
     public function logout() {

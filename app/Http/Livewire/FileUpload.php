@@ -26,7 +26,7 @@ class FileUpload extends Component
         $this->body = '';
         $this->engine_capacity = '';
         $this->description = '';
-        $this->main_image = '';
+        $this->main_image = null;
 
         
     }

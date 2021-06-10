@@ -15,10 +15,13 @@ Officers-ZineX
 
                     </div>
 
-                        
-
                     <!-- Content Row -->
 					<div class="container-fluid">
+                        @if (session('status'))
+                        <div class="alert alert-danger">
+                            {{session('status')}}
+                        </div>  
+                        @endif
                         <form action="{{ route('officer.post') }}" method="POST" >
                             @csrf
                     
@@ -85,7 +88,9 @@ Officers-ZineX
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>
-                                        <td><a href="{{ route('drivers.edit',$item->id) }}" class="btn btn-success">Edit</a>
+                                        <td><a href="/edit-officer/{{$item->id}}" class="btn btn-success">Edit</a>
+                                        <a href="/delete-officer/{{$item->id}}" class="btn btn-success">Delete</a>
+                                        </td>
                                         
                                     </tr>
                                         

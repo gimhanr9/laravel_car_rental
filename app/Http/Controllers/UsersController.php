@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -74,9 +75,18 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+    
+        ]);
+        $user=User::find($id);
+        Auth::user->update($validatedData);
+        
+        return redirect()->route('admin.officers');
     }
 
     /**

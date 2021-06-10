@@ -32,9 +32,19 @@ Admin-ZineX
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
-                                                <th>Level</th>
+                                             
                                             </tr>
                                         </thead>
+                                        @foreach ($user as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            
+                                        </tr>
+                                            
+                                        @endforeach
     
                                     </table>
                                 </div>

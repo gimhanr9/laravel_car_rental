@@ -43,7 +43,7 @@ Requests-ZineX
                                         </tr>
                                     </thead>
 
-                                    @foreach ($request as $item)
+                                    @foreach ($rentals as $item)
                                     <tr>
                                         <td>{{ $item->customerId }}</td>
                                         <td>{{ $item->vehicleId }}</td>

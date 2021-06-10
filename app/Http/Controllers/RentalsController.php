@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Rental;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\VehicleAdvertisement;
 
 class RentalsController extends Controller
 {
+    public $vehicleId;
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +17,20 @@ class RentalsController extends Controller
      */
     public function index()
     {
+        $rentals=Rental::where('approved','No')->get();
+        return view('customer.unconfirmedRentals',['rentals'=>$rentals]);
+    }
+
+    public function confirmedRentals()
+    {
+        $rentals=Rental::where('approved','Yes')->get();
+        return view('customer.confirmedRentals',['rentals'=>$rentals]);
+    }
+
+    public function allRentals()
+    {
         $rentals=Rental::get();
-        return view('customer.myRentals',['rentals'=>$rentals]);
+        return view('admin.requests',['rentals'=>$rentals]);
     }
 
     /**
@@ -23,9 +38,9 @@ class RentalsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($vehicle_id)
     {
-        //
+        $this->vehicleId=vehicle_id;
     }
 
     /**
@@ -45,13 +60,23 @@ class RentalsController extends Controller
     
         ]);
 
+        $user = Auth::user();
+        $vehicle=VehicleAdvertisement::where('id',$vehicleId)->get(); 
         Rental::create([
+            'customerId'=>$user->id,
+            'vehicleId'=>$vehicleId,
+            'customerName'=>$user->name,
+            'vehicleBrand'=>$vehicle->brand,
             'start' => $request->start,
             'destination' => $request->destination,
+            'distance' => $request->distance,
+            'price'=>$request->distance * $vehicle->cost,
             'dateTaken' => $request->dateTaken,
             'dueDate' => $request->dueDate,
-            'distance' => $request->distance,
+            'approved' => 'No'
         ]);
+
+        return redirect()->route('customer.unconfirmedRentals');
     }
 
     /**

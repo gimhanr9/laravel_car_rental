@@ -17,10 +17,11 @@
                         <!-- Content Row -->
     <div class="container-fluid">
 
-    <form action="{{ route('officer.update',$driver->id) }}" method="POST" >
+    <form action="/update-officer/{{$officer->id}}" method="post" >
         @csrf
 
         <div class="form-group">
+            <input name="invisible" type="hidden" value="{{$officer->id}}">
             <label for="inputAddress">Name</label>
             <input type="text" class="form-control" id="inputTitle" value="{{$officer->name}}"
             name="name">
@@ -47,7 +48,7 @@
           </div>
 
         </div>
-        @method('PATCH')
+
     <button type="submit" class="btn btn-success">Update</button>
         
     </form>

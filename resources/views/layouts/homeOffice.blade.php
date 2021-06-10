@@ -44,7 +44,7 @@
                 <a id="sub_menu2" class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Drivers</a>
               
                 <div id="myDropdown2" class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('drivers.create') }}">Add Driver</a>
+                  
   
                     <a class="dropdown-item" href="{{ route('drivers.all') }}">View Drivers</a>
                   

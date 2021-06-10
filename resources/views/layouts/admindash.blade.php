@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('admin.home') }}">
                   
                     <span>Dashboard</span></a>
             </li>
@@ -71,13 +71,13 @@
 
            
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('admin.allvehicles') }}">
                    
-                    <span>Users</span></a>
+                    <span>Vehicles</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('requests.all') }}">
                    
                     <span>Requests</span></a>
             </li>
