@@ -57,7 +57,7 @@ class FileUpload extends Component
   
         VehicleAdvertisement::create($validatedData);
   
-        session()->flash('message', 'Image successfully Uploaded.');
+        session()->flash('message', 'Vehicle successfully Uploaded.');
         $this->resetInputFields();
     }
 

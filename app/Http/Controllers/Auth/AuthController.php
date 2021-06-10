@@ -79,6 +79,32 @@ class AuthController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function createOfficer()
+    {  
+        
+        return view('admin.addOfficer');
+    }
+
+    public function storeOfficer(Request $request)
+    {  
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'phone' => 'required',
+    
+        ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'level' => 'Officer',
+        ]);
+           
+        return redirect()->route('dashboard');
+    }
+
     public function logout() {
         
         auth()->logout();

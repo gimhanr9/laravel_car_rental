@@ -14,8 +14,8 @@ class DriversController extends Controller
      */
     public function index()
     {
-        $drivers=Drivers::all(['id','name']);
-        return view('officer.listDrivers',['drivers'=>$drivers]);
+
+        return view('officer.listDrivers');
     }
 
     /**
@@ -72,8 +72,8 @@ class DriversController extends Controller
      */
     public function edit($id)
     {
-        $driver = Drivers::find($id);
-        return view('officer.driverEdit',['driver'=>$driver]);
+        
+        
     }
 
     /**
@@ -85,7 +85,7 @@ class DriversController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        /*$this->validate($request, [
             'name' => 'required',
             'licenseNo' => 'required',
             'phone' => 'required',
@@ -99,7 +99,7 @@ class DriversController extends Controller
         $driver->dob=$request->input('dob');
 
         $driver->save();
-        return redirect('officer.listDrivers')->with('success','Successfully Updated');
+        return redirect('officer.listDrivers')->with('success','Successfully Updated');*/
 
 
     }

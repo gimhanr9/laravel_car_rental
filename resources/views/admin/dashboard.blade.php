@@ -42,5 +42,5 @@ Admin-ZineX
                         </div>
     
     </div>
-
+</div>
 @endsection

@@ -27,9 +27,14 @@ Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'loginValidate'])->name('login.post');
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
 Route::post('registration', [AuthController::class, 'store'])->name('register.post');
+//Route::post('officer/create', [AuthController::class, 'createOfficer'])->name('officer.create');
+Route::post('add/officer', [AuthController::class, 'storeOfficer'])->name('officer.post');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+Route::get('officer/all', [HomeController::class, 'officerAll'])->name('officer.all');
+Route::get('officer/edit', [HomeController::class, 'editOfficer'])->name('officer.edit');
 //Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home')->middleware('userLevel');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('officer/home', [HomeController::class, 'officerHome'])->name('officer.home');
@@ -39,14 +44,10 @@ Route::get('vehicles/all', [VehicleAdvertisementsController::class, 'index'])->n
 Route::get('details/{id}', [VehicleAdvertisementsController::class, 'show']);
 
 
-Route::get('request/post', [RequestsController::class, 'store'])->name('request.post');
+Route::post('add/officer', [RentalsController::class, 'storeRequest'])->name('request.post');
 
 
-
-Route::get('drivers/create', [DriversController::class, 'create'])->name('drivers.create');
-Route::get('drivers/post', [DriversController::class, 'store'])->name('drivers.post');
 Route::get('drivers/all', [DriversController::class, 'index'])->name('drivers.all');
-Route::get('drivers/edit', [DriversController::class, 'edit'])->name('drivers.edit');
-Route::get('drivers/update', [DriversController::class, 'update'])->name('drivers.update');
+
 
 

@@ -64,7 +64,7 @@
 
            
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('officer.all') }}">
                    
                     <span>Officers</span></a>
             </li>

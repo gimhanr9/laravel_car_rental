@@ -19,18 +19,19 @@ class CreateRentalsTable extends Migration
             $table->integer('vehicleId');
             $table->string('customerName',100);
             $table->string('vehicelBrand',100);
-            $table->integer('driverId');
+            $table->string('start',100);
+            $table->string('destination',100);
             $table->integer('distance');
             $table->string('price',100);
             $table->string('dateTaken',100);
             $table->string('dueDate',100);
-            $table->string('returned',100);
+            $table->string('approved',100);
 
             $table->timestamps();
 
             $table->foreign('customerId')->references('id')->on('users');
             $table->foreign('vehicleId')->references('id')->on('vehicle_advertisements');
-            $table->foreign('driverId')->references('id')->on('drivers');
+        
         });
     }
 

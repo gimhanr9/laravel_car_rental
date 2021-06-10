@@ -36,7 +36,22 @@ class RentalsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'start' => 'required',
+            'destination' => 'required',
+            'dateTaken' => 'required',
+            'dueDate' => 'required',
+            'distance' => 'required',
+    
+        ]);
+
+        Rental::create([
+            'start' => $request->start,
+            'destination' => $request->destination,
+            'dateTaken' => $request->dateTaken,
+            'dueDate' => $request->dueDate,
+            'distance' => $request->distance,
+        ]);
     }
 
     /**
@@ -47,7 +62,7 @@ class RentalsController extends Controller
      */
     public function show(Rental $rental)
     {
-        //
+        
     }
 
     /**

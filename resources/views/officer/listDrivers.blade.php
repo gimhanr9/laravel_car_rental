@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Add Driver</h1>
+          <h1>Drivers</h1>
          
         </div>
       </div>
@@ -23,33 +23,10 @@
         </div>
     @endif
 </div>
-  <div class="container">
-<div class="table-responsive">
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">License No</th>
-        <th scope="col">Phone</th>
-        <th scope="col">DOB</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-
-    @foreach ($drivers as $item)
-    <tr>
-        <td>{{ $item->id }}</td>
-        <td>{{ $item->name }}</td>
-        <td>{{ $item->licenseNo }}</td>
-        <td>{{ $item->phone }}</td>
-        <td>{{ $item->dob }}</td>
-        <td><a href="{{ route('drivers.edit',$item->id) }}" class="btn btn-success">Edit</a>
-    </tr>
-        
-    @endforeach
-    
-  </table>
-</div>
+<div>
+  @livewire('manage-drivers')
+  <br>
+  <br>
   </div>
+  @livewireScripts
 @endsection

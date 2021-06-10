@@ -1,7 +1,7 @@
 @extends('layouts.admindash');
 
 @section('title')
-Admin-ZineX
+Requests-ZineX
 
 @endsection
 
@@ -17,7 +17,7 @@ Admin-ZineX
                     <!-- Content Row -->
 					<div class="container-fluid">
 
-                    <!-- Page Heading -->
+         
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -33,6 +33,8 @@ Admin-ZineX
                                             <th>VehicleID</th>
                                             <th>Customer Name</th>
                                             <th>Brand</th>
+                                            <th>Start</th>
+                                            <th>Destination</th>
                                             <th>Distance</th>
                                             <th>Price</th>
                                             <th>Date Taken</th>
@@ -47,6 +49,8 @@ Admin-ZineX
                                         <td>{{ $item->vehicleId }}</td>
                                         <td>{{ $item->customerName }}</td>
                                         <td>{{ $item->vehicleBrand }}</td>
+                                        <td>{{ $item->start }}</td>
+                                        <td>{{ $item->destination }}</td>
                                         <td>{{ $item->distance }}</td>
                                         <td>{{ $item->price }}</td>
                                         <td>{{ $item->dateTaken }}</td>

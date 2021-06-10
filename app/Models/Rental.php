@@ -19,12 +19,13 @@ class Rental extends Model
         'vehicleId',
         'customerName',
         'vehicleBrand',
-        'driverId',
+        'start',
+        'destination',
         'distance',
         'price',
         'dateTaken',
         'dueDate',
-        'returned'
+        'approved'
     ];
     public function user(){
         return $this->belongsTo('App\Models\Drivers','customerId');
@@ -35,8 +36,4 @@ class Rental extends Model
 
     }
 
-    public function driver(){
-        return $this->belongsTo('App\Models\Drivers','driverId');
-
-    }
 }

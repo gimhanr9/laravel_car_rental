@@ -19,7 +19,10 @@ class CreateDriversTable extends Migration
             $table->string('licenseNo',100);
             $table->string('phone',100);
             $table->string('dob',100);
+            $table->integer('carId');
             $table->timestamps();
+
+            $table->foreign('carId')->references('id')->on('vehicle_advertisements');
         });
     }
     
