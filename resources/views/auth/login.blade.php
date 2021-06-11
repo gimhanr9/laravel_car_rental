@@ -20,6 +20,11 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                             </div>
+                            @if (session('status'))
+                        <div class="alert alert-danger">
+                            {{session('status')}}
+                        </div>  
+                        @endif
                             <form class="user" action="{{ route('login.post') }}" method="POST">
                             @csrf
                                 <div class="form-group">
@@ -39,11 +44,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6 offset-md-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Remember Me
-                                            </label>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">
@@ -53,9 +54,7 @@
                                 
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
+                            
                             <div class="text-center">
                                 <a class="small" href="{{ route('register') }}">Create an Account!</a>
                             </div>
