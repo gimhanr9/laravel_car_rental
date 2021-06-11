@@ -48,7 +48,8 @@
             <td>{{ $item->price }}</td>
             <td>{{ $item->dateTaken }}</td>
             <td>{{ $item->dueDate }}</td>
-            <td></td>
+            <td><a href="/invoice-download/{{$item->id}}" class="btn btn-success">Download</a></td>
+           
             
         </tr>
             

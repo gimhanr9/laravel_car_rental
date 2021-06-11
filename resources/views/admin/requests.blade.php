@@ -54,7 +54,7 @@ Unconfirmed Requests-ZineX
                                         <td>{{ $item->price }}</td>
                                         <td>{{ $item->dateTaken }}</td>
                                         <td>{{ $item->dueDate }}</td>
-                                        <td><a href="/request-confirm/{{$item->id}}" class="btn btn-success">Confirm</a>
+                                        <td><a href="/request-confirm/{{$item->id}}" class="btn btn-success">Confirm</a></td>
                                         
                                     </tr>
                                         

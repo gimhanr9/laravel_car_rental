@@ -7,6 +7,7 @@ use App\Http\Controllers\RentalsController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\VehicleAdvertisementsController;
 use App\Models\User;
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,4 +68,4 @@ Route::get('customer/unconfirmed', [RentalsController::class, 'index'])->name('c
 Route::get('drivers/all', [DriversController::class, 'index'])->name('drivers.all');
 
 
-
+Route::get('invoice-download/{id}', [PDFController::class, 'generatePDF']);
