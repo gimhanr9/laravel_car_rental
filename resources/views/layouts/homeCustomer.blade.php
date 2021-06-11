@@ -26,14 +26,14 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>ZineX</h2></a>
+          <a class="navbar-brand" href="{{ route('home') }}"><h2>ZineX</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+                <a class="nav-link" href="{{ route('home') }}">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -42,13 +42,10 @@
                 <a class="nav-link" href="{{ route('vehicles.all') }}">Cars</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Rentals</a>
+                <a class="nav-link" href="{{ route('customer.requestconfirmed') }}">Rentals</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cars.html">Requests</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">About</a>
+                <a class="nav-link" href="{{ route('customer.requestunconfirmed') }}">Requests</a>
               </li>
               
               <li class="nav-item">
@@ -74,23 +71,10 @@
           <div class="col-md-3 footer-item">
             <h4>Car Dealer Website</h4>
             <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
-            <ul class="social-icons">
-              <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
+            
           </div>
           
-          <div class="col-md-3 footer-item">
-            <h4>Additional Pages</h4>
-            <ul class="menu-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Terms</a></li>
-            </ul>
-          </div>
+          
           <div class="col-md-3 footer-item last-item">
             <h4>Contact Us</h4>
             <div class="contact-form">

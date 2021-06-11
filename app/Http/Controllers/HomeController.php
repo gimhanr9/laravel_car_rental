@@ -13,18 +13,44 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('customer.customerHome');
+        if (auth()->check() && auth()->user()->level=='Admin') {
+            $users=User::where('level','Customer')->get();
+            return view('admin.dashboard',['user'=>$users]);
+        }else if(auth()->check() && auth()->user()->level=='Officer'){
+            return view('officer.officerHome');
+        }else if(auth()->check() && auth()->user()->level=='Customer'){
+            return view('customer.customerHome');
+        }else {
+            return redirect()->route('login');
+        }
     }
 
     public function officerHome()
     {
-        return view('officer.officerHome');
+        if (auth()->check() && auth()->user()->level=='Admin') {
+            $users=User::where('level','Customer')->get();
+            return view('admin.dashboard',['user'=>$users]);
+        }else if(auth()->check() && auth()->user()->level=='Officer'){
+            return view('officer.officerHome');
+        }else if(auth()->check() && auth()->user()->level=='Customer'){
+            return view('customer.customerHome');
+        }else {
+            return redirect()->route('login');
+        }
     }
 
     public function adminHome()
     {
-        $users=User::where('level','Customer')->get();
-        return view('admin.dashboard',['user'=>$users]);
+        if (auth()->check() && auth()->user()->level=='Admin') {
+            $users=User::where('level','Customer')->get();
+            return view('admin.dashboard',['user'=>$users]);
+        }else if(auth()->check() && auth()->user()->level=='Officer'){
+            return view('officer.officerHome');
+        }else if(auth()->check() && auth()->user()->level=='Customer'){
+            return view('customer.customerHome');
+        }else {
+            return redirect()->route('login');
+        }
     }
 
     public function officerAll()
@@ -52,7 +78,7 @@ class HomeController extends Controller
         $user=User::find($id);
         $user->update($validatedData);
         
-        return redirect()->route('officer.all');
+        return redirect()->route('officer.all')->with('status','Successfully updated the Officer.');
        
     }
 

@@ -18,7 +18,7 @@ class CreateRentalsTable extends Migration
             $table->integer('customerId');
             $table->integer('vehicleId');
             $table->string('customerName',100);
-            $table->string('vehicelBrand',100);
+            $table->string('vehicleBrand',100);
             $table->string('start',100);
             $table->string('destination',100);
             $table->integer('distance');
@@ -29,8 +29,8 @@ class CreateRentalsTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('customerId')->references('id')->on('users');
-            $table->foreign('vehicleId')->references('id')->on('vehicle_advertisements');
+            $table->foreign('customerId')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('vehicleId')->references('id')->on('vehicle_advertisements')->onDelete('cascade');
         
         });
     }

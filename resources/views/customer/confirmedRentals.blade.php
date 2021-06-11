@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Unconfirmed Rentals</h1>
+          <h1>Confirmed Rentals</h1>
         </div>
       </div>
     </div>

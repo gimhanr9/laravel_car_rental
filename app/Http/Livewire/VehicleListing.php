@@ -17,8 +17,7 @@ class VehicleListing extends Component
     public function render()
     {
         $searchTerm='%'.$this->searchTerm . '%';
-        $advertisements=VehicleAdvertisement::where('title','LIKE',$searchTerm)
-        ->orWhere('brand','LIKE',$searchTerm)->orWhere('model','LIKE',$searchTerm)->get();
+        $advertisements=VehicleAdvertisement::where('rented',"No")->where('title','LIKE',$searchTerm)->get();
         return view('livewire.vehicle-listing',['vehicleAdvertisement'=>$advertisements]);
       
     }

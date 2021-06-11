@@ -4,10 +4,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Drivers;
+use App\Models\VehicleAdvertisement;
 
 class ManageDrivers extends Component
 {
-    public $driverId,$name,$licenseNo,$phone,$dob;
+    public $driverId,$name,$licenseNo,$phone,$dob,$carId;
    
     public $updateMode = false;
 
@@ -16,6 +17,7 @@ class ManageDrivers extends Component
         $this->licenseNo = '';
         $this->phone = '';
         $this->dob = '';
+        $this->carId = '';
     }
 
     
@@ -27,10 +29,11 @@ class ManageDrivers extends Component
             'licenseNo' => 'required',
             'phone' => 'required',
             'dob' => 'required',
+            'carId'=>'nullable'
          
         ]);
   
-        Drivers::create($validatedData);
+      Drivers::create($validatedData);
   
         session()->flash('message', 'Driver successfully Uploaded.');
         $this->resetInputFields();
@@ -40,10 +43,11 @@ class ManageDrivers extends Component
     {
         $driver = Drivers::findOrFail($id);
         $this->driverId = $id;
-        $this->name = $driver->title;
+        $this->name = $driver->name;
         $this->licenseNo = $driver->licenseNo;
         $this->phone = $driver->phone;
         $this->dob = $driver->dob;
+        $this->dob = $driver->carId;
 
         $this->updateMode = true;
     }
@@ -55,6 +59,7 @@ class ManageDrivers extends Component
             'licenseNo' => 'required',
             'phone' => 'required',
             'dob' => 'required',
+            'carId' => 'required | nullable',
          
         ]);
   
@@ -81,8 +86,8 @@ class ManageDrivers extends Component
     public function render()
     {
         $drivers=Drivers::get();
-        return view('livewire.manage-drivers',['driver'=>$drivers]);
-    
+        $vehicles=VehicleAdvertisement::get();
+        return view('livewire.manage-drivers',['driver'=>$drivers,'vehicle'=>$vehicles]);
     }
    
 }

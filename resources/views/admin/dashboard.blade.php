@@ -14,7 +14,7 @@ Admin-ZineX
                         </div>
 
                         <!-- Content Row -->
-                        <div class="container-fluid">
+                    <div class="container-fluid">
     
                         <!-- Page Heading -->
     
@@ -50,6 +50,7 @@ Admin-ZineX
                                 </div>
                             </div>
                         </div>
+                    </div>
     
     </div>
 </div>

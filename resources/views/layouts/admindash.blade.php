@@ -77,9 +77,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('requests.all') }}">
+                <a class="nav-link" href="{{ route('requests.unconfirmed') }}">
                    
-                    <span>Requests</span></a>
+                    <span>Unconfirmed Requests</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('requests.confirmed') }}">
+                   
+                    <span>Confirmed Requests</span></a>
             </li>
 
             <!-- Divider -->

@@ -49,7 +49,7 @@ Vehicles-ZineX
                                         @foreach ($vehicleAdvertisement as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
-                                            <td><img src="{{ URL::to('/') }}/storage/uploads/{{ $item->main_image }}" class="img-thumbnail" width="75" /></td>
+                                            <td><img src="{{ URL::to('/') }}/storage/{{ $item->main_image }}" class="img-thumbnail" width="75" /></td>
                                             <td>{{ $item->title }}</td>
                                             <td>{{ $item->model }}</td>
                                             <td>{{ $item->brand }}</td>
@@ -60,6 +60,7 @@ Vehicles-ZineX
                                             <td>{{ $item->fuel }}</td>
                                             <td>{{ $item->body }}</td>
                                             <td>{{ $item->engine_capacity }}</td>
+                                            <td>{{ $item->description }}</td>
                                             <td>{{ $item->rented }}</td>
                                             
                                         </tr>

@@ -24,7 +24,7 @@ class Drivers extends Model
 
     public $timestamps=true;
 
-    public function car(){
+    public function vehicle(){
         return $this->belongsTo(VehicleAdvertisement::class,'carId');
 
     }

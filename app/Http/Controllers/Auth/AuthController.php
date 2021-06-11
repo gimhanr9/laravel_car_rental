@@ -24,7 +24,16 @@ class AuthController extends Controller
 
     public function index()
     {
-        return view('auth.login');
+        if (auth()->check() && auth()->user()->level=='Admin') {
+            return redirect()->route('admin.home');
+        }else if(auth()->check() && auth()->user()->level=='Officer'){
+            return redirect()->route('officer.home');
+        }else if(auth()->check() && auth()->user()->level=='Customer'){
+            return redirect()->route('home');
+        }else {
+            return view('auth.login');
+        }
+        
     }
     
     public function loginValidate(Request $request)
@@ -39,10 +48,10 @@ class AuthController extends Controller
             return back()->with('status','The login details are incorrect');
         }else{
             if(auth()->user()->level=='Admin'){
-                return redirect()->route('admin/home');
+                return redirect()->route('admin.home');
 
             }else if(auth()->user()->level=='Officer'){
-                return redirect()->route('officer/home');
+                return redirect()->route('officer.home');
 
             }
             else{
@@ -76,7 +85,7 @@ class AuthController extends Controller
             'level' => 'Customer',
         ]);
            
-        return redirect()->route('dashboard');
+        return redirect()->route('login');
     }
 
     public function createOfficer()

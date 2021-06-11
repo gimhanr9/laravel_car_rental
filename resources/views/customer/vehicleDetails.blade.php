@@ -101,7 +101,7 @@
           <br>
           <br>
           <div class="request-link">
-			<a href="default.asp">Request</a>
+			<a href="/request-create/{{$vehicle->id}}">Request</a>
 		</div>
           
 

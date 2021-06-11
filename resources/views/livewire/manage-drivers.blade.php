@@ -29,7 +29,7 @@
             <th scope="col">License No</th>
             <th scope="col">Phone</th>
             <th scope="col">DOB</th>
-            <th scope="col">Car ID</th>
+            <th scope="col">Car ID(Blank means no car assigned)</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -41,7 +41,7 @@
             <td>{{ $item->licenseNo }}</td>
             <td>{{ $item->phone }}</td>
             <td>{{ $item->dob }}</td>
-            <td>{{ $item->dob }}</td>
+            <td>{{ $item->carId }}</td>
             <td>
                 <button wire:click="edit({{ $item->id }})" class="btn btn-primary btn-sm">Edit</button>
                 <button wire:click="delete({{ $item->id }})" class="btn btn-danger btn-sm">Delete</button>

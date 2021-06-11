@@ -1,7 +1,7 @@
 @extends('layouts.admindash');
 
 @section('title')
-Unconfirmed Requests-ZineX
+Confirmed Requests-ZineX
 
 @endsection
 
@@ -9,12 +9,18 @@ Unconfirmed Requests-ZineX
 <div class="container-fluid">
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Unconfirmed Requests</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Confirmed Requests</h1>
 
                     </div>
+
                     
                     <!-- Content Row -->
 					<div class="container-fluid">
+                        @if (session('status'))
+                        <div class="alert alert-danger">
+                            {{session('status')}}
+                        </div>  
+                        @endif
 
          
 
@@ -38,7 +44,8 @@ Unconfirmed Requests-ZineX
                                             <th>Price</th>
                                             <th>Date Taken</th>
                                             <th>Due Date</th>
-                                            <th>Actions</th>
+                                            <th>Approved</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
 
@@ -54,8 +61,8 @@ Unconfirmed Requests-ZineX
                                         <td>{{ $item->price }}</td>
                                         <td>{{ $item->dateTaken }}</td>
                                         <td>{{ $item->dueDate }}</td>
-                                        <td><a href="/request-confirm/{{$item->id}}" class="btn btn-success">Confirm</a>
-                                        
+                                        <td>{{ $item->approved }}</td>
+                                        <td><a href="/request-return/{{$item->id}}" class="btn btn-success">Return</a>
                                     </tr>
                                         
                                     @endforeach

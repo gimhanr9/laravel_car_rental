@@ -31,6 +31,24 @@
       </div>
 
     </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputState">Car</label>
+        <select id="inputState" class="form-control" wire:model="carId">
+          <option selected value="0">Select</option>
+          @foreach ($vehicle as $item)
+          <option value="{{ $item->id }}"> 
+          {{ $item->id }} 
+          </option>
+          @endforeach    
+
+          
+
+        </select>
+        @error('body') <span class="text-danger">{{ $message }}</span> @enderror
+      </div>
+
+    </div>
 <button type="submit" class="btn btn-success">Update</button>
 <button wire:click.prevent="cancel()" class="btn btn-success">Cancel</button>
 </div>

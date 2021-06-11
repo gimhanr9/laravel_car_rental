@@ -27,10 +27,15 @@ class RentalsController extends Controller
         return view('customer.confirmedRentals',['rentals'=>$rentals]);
     }
 
-    public function allRentals()
+    public function unconfirmedRentalsAdmin()
     {
-        $rentals=Rental::get();
+        $rentals=Rental::where('approved','No')->get();
         return view('admin.requests',['rentals'=>$rentals]);
+    }
+    public function confirmedRentalsAdmin()
+    {
+        $rentals=Rental::where('approved','Yes')->get();
+        return view('admin.confirmedRequests',['rentals'=>$rentals]);
     }
 
     /**
@@ -38,9 +43,10 @@ class RentalsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($vehicle_id)
+    public function create($id)
     {
-        $this->vehicleId=vehicle_id;
+        $this->vehicleId=$id;
+        return view('customer.requestForm',['vehicle'=>$id]);
     }
 
     /**
@@ -49,7 +55,7 @@ class RentalsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
             'start' => 'required',
@@ -61,10 +67,10 @@ class RentalsController extends Controller
         ]);
 
         $user = Auth::user();
-        $vehicle=VehicleAdvertisement::where('id',$vehicleId)->get(); 
+        $vehicle=VehicleAdvertisement::find($id); 
         Rental::create([
             'customerId'=>$user->id,
-            'vehicleId'=>$vehicleId,
+            'vehicleId'=>$id,
             'customerName'=>$user->name,
             'vehicleBrand'=>$vehicle->brand,
             'start' => $request->start,
@@ -76,7 +82,7 @@ class RentalsController extends Controller
             'approved' => 'No'
         ]);
 
-        return redirect()->route('customer.unconfirmedRentals');
+        return redirect()->route('customer.requestunconfirmed')->with('status','Successfully added a request.');
     }
 
     /**
@@ -96,9 +102,12 @@ class RentalsController extends Controller
      * @param  \App\Models\Rental  $rental
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rental $rental)
+    public function edit($id)
     {
-        //
+        $rental=Rental::find($id);
+        Rental::where('id',$id)->update(['approved'=>'Yes']);
+        VehicleAdvertisement::where('id',$rental->vehicleId)->update(['rented'=>'Yes']);
+        return redirect()->route('requests.confirmed');
     }
 
     /**
@@ -108,9 +117,13 @@ class RentalsController extends Controller
      * @param  \App\Models\Rental  $rental
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rental $rental)
+    public function update($id)
     {
-        //
+        $rental=Rental::find($id);
+        Rental::where('id',$id)->update(['approved'=>'Completed']);
+        VehicleAdvertisement::where('id',$rental->vehicleId)->update(['rented'=>'No']);
+        return redirect()->route('requests.confirmed');
+        
     }
 
     /**

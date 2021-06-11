@@ -1,4 +1,4 @@
-@extends('layouts.admindash');
+@extends('layouts.homeCustomer');
 
 @section('title')
 Request-ZineX
@@ -19,7 +19,7 @@ Request-ZineX
   <br>
   <br>
   <div class="container">
-    <form action="{{ route('request.post') }}" method="POST" >
+    <form action="/request-post/{{$vehicle}}" method="POST" >
       @csrf
 
   
@@ -69,9 +69,12 @@ Request-ZineX
           
   
           </div>
+        
       <button type="submit" class="btn btn-success">Add</button>
+    
           
       </form>
+      
   </div>
   
 
